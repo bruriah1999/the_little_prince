@@ -4,3 +4,7 @@ from tools.family_relationships import FamilyRelation
 from tools.gossip_text import GossipAboutAPerson
 from tools.identification_numbers import IdentificationNumbers
 from tools.work_details import WorkDetails
+from tools.vehicle_ownership import VehicleOwnership
+from tools.personal_info import PersonalInfo
+from tools.linkedin_posts import LinkedInPosts
+from tools.whatsapp_conversations import WhatsAppConversations

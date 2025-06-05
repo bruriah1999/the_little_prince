@@ -6,7 +6,7 @@ from huggingface_hub import login
 from smolagents import CodeAgent, HfApiModel
 
 from the_little_prince_system_prompt import THE_LITTLE_PRINCE_SYSTEM_PROMPT
-from tools import Address, ContactInfo, FamilyRelation, GossipAboutAPerson, IdentificationNumbers, WorkDetails
+from tools import Address, ContactInfo, FamilyRelation, GossipAboutAPerson, IdentificationNumbers, WorkDetails, PersonalInfo, VehicleOwnership, LinkedInPosts, WhatsAppConversations
 
 login(os.getenv('HF_API_KEY'))
 
@@ -19,9 +19,9 @@ prompt_template = yaml.safe_load(
 )
 prompt_template['system_prompt'] = THE_LITTLE_PRINCE_SYSTEM_PROMPT
 agent = CodeAgent(
-    tools=[Address(), ContactInfo(), FamilyRelation(), GossipAboutAPerson(), IdentificationNumbers(), WorkDetails()],
+    tools=[Address(), ContactInfo(), FamilyRelation(), GossipAboutAPerson(), IdentificationNumbers(), WorkDetails(), PersonalInfo(), VehicleOwnership(), LinkedInPosts(), WhatsAppConversations()],
     model=model, prompt_templates=prompt_template)
 
 # Run a task
 result = agent.run("Tell me everything you know about L61595148?")
-print(result)  # Output: The 15th prime number is 47
+print(result) 
